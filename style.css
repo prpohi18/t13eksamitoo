@@ -1,0 +1,23 @@
+.sansserif {
+    font-family: Arial, Helvetica, sans-serif;
+}
+.header1 {
+    background-color: tomato;
+    color: white;
+    padding: 8px;
+} 
+
+.buttonStyle {
+    background-color: white; 
+    color: black; 
+    border: 2px solid tomato;
+}
+
+.buttonStyle:hover {
+    background-color: tomato;
+    color: white;
+}
+
+.div1 {
+	background-color: tomato;
+}
