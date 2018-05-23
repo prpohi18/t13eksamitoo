@@ -1,0 +1,118 @@
+Viskame_nappe.java (KODUS TEHTUD)
+
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class Viskame_nappe{
+	public static void main(String[] args){
+		
+		Scanner user_input = new Scanner(System.in);
+		
+		int Kasutajad;
+			
+		System.out.print("Mitu kasutajat on (min 3 in): ");
+		/*Alljärgnev on kasutajate hulga välja selgitamiseks*/
+		Kasutajad = user_input.nextInt();
+			if (Kasutajad < 3){
+				System.out.println("Kasutajaid on liiga vähe");
+				return;
+			} else {
+				System.out.println("Kasutajaid on piisavalt");
+			}
+		/*Alljärgnev on näppude arvude sisse küsimiseks*/
+		Scanner NappudeArv = new Scanner(System.in); /*Annab võimaluse kasutajalt otse infot küsida*/
+		int Summa = 0; /*Anname teguri/nimetaja/loenduri*/
+		for(int i=0; i<Kasutajad; i++){
+            System.out.print("Kasutaja "+((char) i+1 )+" viskab näppe: "); /*Siin küsib iga järgneva käest uuesti näppe*/
+			Summa = Summa + NappudeArv.nextInt(); /*Iga järgnev näppude kogus liidetakse eelmisele juurde*/
+		}
+		int Ring;
+		
+		/*Alljärgnev annab teada, mis on visatud näppude summa*/
+		System.out.println("Näppude summa kokku on "+Summa);
+		/*Alljärgnev annab teada, milline kasutaja on väljavalitu*/
+		System.out.println(Summa - (((int) Summa/ Kasutajad)*Kasutajad)+1);
+		
+	}
+}
+_____________________________________________________________________________________________________
+TUNNIS EDASIARENDUS:
+Viskame_nappe.java
+
+public class Viskame_nappe{
+	
+	protected String andmed;
+	public Viskame_nappe(String uusKood){
+	/*koht hetkel andmete sisestamiseks*/
+		andmed=uusKood;
+	}
+	
+	/*Mis kogus näppe?*/
+	
+	public int NappudeArv(){
+		return Integer.parseInt(andmed.substring(0, 1));
+	}
+	
+}
+__________________________________________________________
+Votame_kasutajad.java
+
+public class Votame_kasutajad{
+	protected String andmed;
+	protected int summa=0;
+	
+	protected int arvuta=0;
+	public Votame_kasutajad(String uusKood){
+	/*koht hetkel andmete sisestamiseks*/
+		andmed=uusKood;
+	}
+	
+	/*Mitu kasutajat?*/
+	public int Kasutajad(){
+		return Integer.parseInt(andmed.substring(0, 1));
+	}
+	
+	
+	
+	void lisa(Viskame_nappe uus){
+		summa+=uus.NappudeArv();
+	}
+	
+	int arvutamine(){
+		 return(summa - ((summa/ Kasutajad())*Kasutajad())+1);
+	}
+	
+		
+}
+_______________________________________________________________________
+proov1.java
+
+import java.util.Arrays;
+import java.util.*;
+
+/*Kui on sisse antud kasutajate hulk ja visatud näppude hulk*/
+public class proov1{
+	public static void main (String[] arg){
+		Votame_kasutajad a1=new Votame_kasutajad("4");
+		Viskame_nappe k1=new Viskame_nappe("3");
+		Viskame_nappe k2=new Viskame_nappe("9");
+		Viskame_nappe k3=new Viskame_nappe("6");
+		Viskame_nappe k4=new Viskame_nappe("3");
+		a1.lisa(k1);
+		a1.lisa(k2);
+		a1.lisa(k3);
+		a1.lisa(k4);
+		
+		System.out.println("Kasutajate arv on "+a1.Kasutajad());
+		
+		System.out.println("Näppude arv on "+k1.NappudeArv());
+		System.out.println("Näppude arv on "+k2.NappudeArv());
+		System.out.println("Näppude arv on "+k3.NappudeArv());
+		System.out.println("Näppude arv on "+k4.NappudeArv());
+		
+		System.out.println(a1.arvutamine());
+		
+		
+	}
+	
+}
