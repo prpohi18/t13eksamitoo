@@ -1,0 +1,61 @@
+<html>
+	<head>
+		<title>Parkimise kontrollimine</title>
+		<script>
+			var xhr=new XMLHttpRequest();
+			xhr.onreadystatechange=andmedSaabusid;
+			function andmedSaabusid(){
+				if(xhr.readyState==4){
+					console.log(xhr.responseText);
+					kuvaAutod();
+				}
+			}
+			
+			function kuvaAutod() {
+				var obj=JSON.parse(xhr.responseText);
+				var counter = 0;
+				var s="<ul>"
+				for (var i=0; i<obj.length; i++){
+					if (obj[i].loppjs >= new Date().getTime()){
+						counter++;
+						s+="<li><a>"+obj[i].nrmark+ "</a> alates: "+ obj[i].algus + " kuni: " + obj[i].lopp + "</li>";
+					}
+				}
+				s+="</ul>\n Parklas on registreeritud " + counter + " autot.";
+				document.getElementById("autod").innerHTML=s;
+			}
+			function kysiAutod() {
+				xhr.open("GET", "/loetelu", true);
+				xhr.send();
+			}
+			
+			
+			function otsi() {
+				var input, filter, ul, li, a, i;
+				input = document.getElementById("otsing");
+				filter = input.value.toUpperCase();
+				ul = document.getElementsByTagName("ul");
+				li = document.getElementsByTagName("li");
+				console.log("otising");
+				for (i = 0; i < li.length; i++) {
+					a = li[i].getElementsByTagName("a")[0];
+					if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+						li[i].style.display = "";
+					} else {
+						li[i].style.display = "none";
+
+					}
+				}
+			}
+		</script>
+		
+		<style>
+
+		</style>
+	</head>
+
+	<body onload="kysiAutod()">
+		<input type="text" id="otsing" onkeyup="otsi()" placeholder="Otsi regisrinumbrit!">
+		<div id="autod"></div>
+	</body>
+</html>

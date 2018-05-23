@@ -1,0 +1,83 @@
+<html>
+	<head>
+		<title>Parkimise alustamine</title>
+		<script>
+			var uusNrmark = "";
+			var xhr=new XMLHttpRequest();
+			xhr.onreadystatechange=andmedSaabusid;
+			function andmedSaabusid(){
+				if(xhr.readyState==4){
+					console.log(xhr.responseText);
+					if(xhr.responseText.endsWith("salvestatud")){
+						document.getElementById("autod").innerHTML=xhr.responseText;
+						kysiAutod();
+					} else {
+						kuvaAutod();
+					}
+				}
+			}
+			
+			function kuvaAutod() {
+				var obj=JSON.parse(xhr.responseText);
+				var s="<h1>"
+				for (var i=0; i<obj.length; i++){
+					if (obj[i].nrmark==uusNrmark) {
+						s+=obj[i].nrmark+ " parkimine alates: "+ obj[i].algus + " kuni: " + obj[i].lopp + ".\n";
+					}
+				}
+				s+="</h1>";
+				document.getElementById("autod").innerHTML=s;
+				document.getElementById("lisa").style.display = "none";
+				setTimeout(function(){ document.getElementById("autod").innerHTML=""; document.getElementById("lisa").style.display = "block"; document.getElementById("kast1").value="";}, 5000);
+			}
+			function kysiAutod() {
+				xhr.open("GET", "/loetelu", true);
+				xhr.send();
+			}
+			function lisamine() {
+				var aadress="/lisa?nrmark="+document.getElementById("kast1").value;
+				uusNrmark = document.getElementById("kast1").value;
+				xhr.open("GET", aadress, true);
+				xhr.send();
+			}
+		</script>
+		
+		<style>
+			body {
+				padding: 50 0;
+				text-align: center;
+				font-family:arial;
+				font-size:30;
+			}
+			#btn{
+				background-color: #4CAF50;
+				border: none;
+				color: white;
+				padding: 15px 32px;
+				text-align: center;
+				text-decoration: none;
+				display: inline-block;
+				font-size: 16px;
+				border-radius: 8px;
+			}
+			#kast1 {
+				width: 150px;
+				padding: 6px 10px;
+				margin: 8px 0;
+				box-sizing: border-box;
+				font-size:32px;
+				
+			}
+		</style>
+	</head>
+
+	<body onload="kysiAutod()">
+		<div id="lisa">
+			<p>Parkimine 3h tasuta.</p>
+			Registrinumber: <input type="text" id="kast1" maxlength="6" minlength="6" placeholder="123ABC"/>
+			
+			<input id="btn" type="button" value="Alusta parkimist!" onclick="lisamine()" />
+		</div>
+		<div id="autod"></div>
+	</body>
+</html>
