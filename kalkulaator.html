@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="style.css">
+<script>
+	function calculateliters100km(){
+	let fuel,distance;
+	fuel = Number(document.getElementById("fuel").value);
+	distance = Number(document.getElementById("distance").value);
+	litres100km= (fuel/distance)*100;
+	document.getElementById("vastus1").value = litres100km;
+	}
+</script>
+</head>
+<body>
+<div align="center" class="sansserif">
+	<p><a href="main.php">Pealeht</a></p>
+	<p><a href="lisamine.php">Tanklate lisamine</a></p>
+	<p><a href="hinnad.php">Hindade muutmine</a></p>
+<h2 class="header1">Keskmise kütusekulu kalkulaator</h2>
+<img src="car_refueling_pic.png"><br><br>
+<p>NB! Kütusekulu arvestatakse viimasest täispaagist uuesti täispaagini tankides</p>
+Sisesta tangitud kütte hulk (l): <input type="number" id="fuel" placeholder="Sisesta tangitud küte liitrites"><br><br>
+Sisesta sõidetud vahemaa (km): <input type="number" id="distance" placeholder="Sisesta sõidetud vahemaa "><br><br>
+<button class="buttonStyle" id="nupp1" onclick="calculateliters100km()">Arvuta</button><br><br>
+Kütusekulu: <input id="vastus1" placeholder="kütusekulu (l/100km)"> l/100km
+</div>
+</body>
+</html>
