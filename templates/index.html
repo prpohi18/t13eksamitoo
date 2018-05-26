@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.css') }}">
+    <title>Kalkulatoorium</title>
+    <style>
+        .center-container {
+            margin: auto;
+            width: 60%;
+            border: 3px solid #2b32ad;
+            padding: 10px;
+
+        }
+        .center-body{
+            margin-left: 31%;
+            margin-right: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="center-container">
+        <h1 style="text-align:center">Kalkulatoorium</h1>
+        <hr>
+        <div class="center-body">
+            <form method="post">
+                <button type="submit" class="btn btn-primary" name="submit" value="currency">Valuuta</button>
+                <button type="submit" class="btn btn-primary" name="submit" value="adding">Liitmine</button>
+                <button type="submit" class="btn btn-primary" name="submit" value="circle">Ringipindala</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
