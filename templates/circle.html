@@ -2,9 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Circle</title>
+    <title>Currency</title>
+    <style>
+        .center-container {
+            margin: auto;
+            width: 60%;
+            border: 3px solid #2b32ad;
+            padding: 10px;
+
+        }
+        .center-body{
+            margin-left: 31%;
+            margin-right: 31%;
+        }
+    </style>
 </head>
 <body>
-    <h1>Circle</h1>
+    <div class="center-container">
+        <h1 style="text-align:center">Kalkulatoorium - {{ name }}</h1>
+        <hr>
+        <div class="center-body">
+            <label for="r">Raadius:</label>
+            <input type="number" class="form-control" id="r">
+            <button class="btn btn-success" onclick="convert()">Arvuta</button>
+            <br>
+            <label for="area">Pindala:</label>
+            <p style="display: inline" id="area"></p>
+        </div>
+    </div>
+<script>
+    function convert(){
+        var r = document.getElementById("r").value;
+        var area = Math.round((r*r * Math.PI) *100) / 100;
+        document.getElementById("area").innerText = area.toString();
+    }
+</script>
 </body>
 </html>
