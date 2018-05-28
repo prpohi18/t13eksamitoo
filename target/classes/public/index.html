@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--
+    https://korrutamine.herokuapp.com/
+-->
+<html>
+    <head>
+        <title>Arvutamine</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            let xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = kuvaVastus
+
+            function multiply() {
+                let a1=document.getElementById("kast1").value
+                let a2=document.getElementById("kast2").value
+                let aadress="/korrutamine?arv1="+a1+"&arv2="+a2
+                xhr.open("GET", aadress, true)
+                xhr.send()
+            }
+            
+            function divide() {
+                let a1=document.getElementById("kast1").value
+                let a2=document.getElementById("kast2").value
+                let aadress="/jagamine?arv1="+a1+"&arv2="+a2
+                xhr.open("GET", aadress, true)
+                xhr.send()
+            }
+            
+            function kuvaVastus(){
+                if(xhr.readyState==4){
+                    document.getElementById("vastus").innerHTML=xhr.responseText
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Arvutamine</h1>
+        <p>SISESTA NUMBRID:</p>
+        <input type="text" id="kast1" />
+        <input type="text" id="kast2" /> 
+        <input type="button" onclick="multiply()" value="*" />
+        <input type="button" onclick="divide()" value="/" />
+        <span> VASTUS:</span>
+        <span id="vastus">Vastuse koht</span>
+    </body>
+</html>
