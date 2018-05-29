@@ -38,31 +38,19 @@ public class Rakendus {
        }
 
     @RequestMapping("/arvutamine")
-       float arvutamine(String tehe){
-           /* int markCounter = 0;
-            Var arvutusRida = [];
-            Var operaator = [];
-            int numbridTehtes = [];
-            int nrCounter = 0;
-            int counter = 0;
-       for (int i = 0; i < tehe.length(); i++) {
-            if (Character.isDigit(tehe.charAt(i))) {
-            return 1;
-            } else {
-            return 2;
-            }
-            arvutusRida.splice(tehe.charAt(i));
-            if(Characer.isDigit(tehe.charAt(i)) == true){
-                String number = number + tehe.charAt(i);
-            } else if {
-                counter = counter + 1;
-                nrCounter = nrCounter + 1;
-                operaator[counter] = tehe.charAt(i);
-                int numberInt = String.parseInt(number);
-                numbridTehtes[nrCounter] = numberInt;
-            }
-       }*/
-       return tehe;
+       float arvutamine(float nr1, String operator, float nr2){
+           float vastus = 0;
+           if(operator == "*"){
+               vastus = nr1 * nr2;
+           } else if (operator == "/"){
+               vastus = nr1 / nr2;
+           } else if (operator == "+"){
+               vastus = nr1 + nr2;
+           } else if (operator == "-"){
+               vastus = nr1 - nr2;
+           }
+           return vastus;
+            
     }
     public static void main(String[] args) {
 		//System.getProperties().put("server.port", 40305);

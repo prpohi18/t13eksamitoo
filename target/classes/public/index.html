@@ -44,52 +44,82 @@
                 xhr.send()
             }
 */
+            let aadress="/arvutamine?nr1="
+            function add() {
+                document.getElementById("kast1").value = document.getElementById("kast1").value + "+"
+                aadress = aadress + "&operator=+&nr2"
+            }
+
+            function subtract() {
+                document.getElementById("kast1").value = document.getElementById("kast1").value + "-"
+                aadress = aadress + "&operator=-&nr2"
+            }
+
+            function multiply() {
+                document.getElementById("kast1").value = document.getElementById("kast1").value + "*"
+                aadress = aadress + "&operator=*&nr2"
+            }
+            
+            function divide() {
+                document.getElementById("kast1").value = document.getElementById("kast1").value + "/"
+                aadress = aadress + "&operator=/&nr2"
+            }
 
             function calculate() {
                 let a1=document.getElementById("kast1").value
-                let aadress="/avrutamine?tehe="+a1
+                //let aadress="/arvutamine?tehe="+a1
                 xhr.open("GET", aadress, true)
                 xhr.send()
             }
 
             function add1() {
-                document.getElementById("kast1").value + "1"
+                document.getElementById("kast1").value = document.getElementById("kast1").value + 1
+                aadress = aadress + 1
             }
 
             function add2() {
-                document.getElementById("kast1").value + "2"
+                document.getElementById("kast1").value = document.getElementById("kast1").value + 2
+                aadress = aadress + 2
             }
 
             function add3() {
-                document.getElementById("kast1").value + "3"
+                document.getElementById("kast1").value = document.getElementById("kast1").value + 3
+                aadress = aadress + 3
             }
 
             function add4() {
-                document.getElementById("kast1").value + "4"
+                document.getElementById("kast1").value = document.getElementById("kast1").value + 4
+                aadress = aadress + 4
             }
 
             function add5() {
-                document.getElementById("kast1").value + "5"
+                document.getElementById("kast1").value = document.getElementById("kast1").value + 5
+                aadress = aadress + 5
             }
 
             function add6() {
-                document.getElementById("kast1").value + "6"
+                document.getElementById("kast1").value = document.getElementById("kast1").value + 6
+                aadress = aadress + 6
             }
 
             function add7() {
-                document.getElementById("kast1").value + "7"
+                document.getElementById("kast1").value = document.getElementById("kast1").value + 7
+                aadress = aadress + 7
             }
 
             function add8() {
-                document.getElementById("kast1").value + "8"
+                document.getElementById("kast1").value = document.getElementById("kast1").value + 8
+                aadress = aadress + 8
             }
 
             function add9() {
-                document.getElementById("kast1").value + "9"
+                document.getElementById("kast1").value = document.getElementById("kast1").value + 9
+                aadress = aadress + 9
             }
 
             function add0() {
-                document.getElementById("kast1").value + "0"
+                document.getElementById("kast1").value = document.getElementById("kast1").value + 0
+                aadress = aadress + 0
             }
             
             function kuvaVastus(){
