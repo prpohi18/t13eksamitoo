@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            let xhr= new XMLHttpRequest();
+            xhr.onreadystatechange=kuvaVastus;
+            
+            function addUser(){
+                let username = document.getElementById("username").value;
+                let pin = document.getElementById("pin").value;
+                let aadress = "/adduser?username="+username+"&pin="+pin;
+                xhr.open("GET",aadress,true);
+                xhr.send();
+            }
+            
+            function checkBalance(){
+                let username = document.getElementById("username").value;
+                let pin = document.getElementById("pin").value;
+                let aadress = "/checkbalance?username="+username+"&pin="+pin;
+                xhr.open("GET",aadress,true);
+                xhr.send();
+            }
+            
+            function depositMoney(){
+                let username = document.getElementById("username").value;
+                let pin = document.getElementById("pin").value;
+                let inputamount = document.getElementById("amount").value;
+                let aadress = "/depositmoney?username="+username+"&pin="+pin+"&amount="+inputamount;
+                xhr.open("GET",aadress,true);
+                xhr.send();
+            }
+            
+            function withdrawMoney(){
+                let username = document.getElementById("username").value;
+                let pin = document.getElementById("pin").value;
+                let inputamount = document.getElementById("amount").value;
+                let aadress = "/withdrawmoney?username="+username+"&pin="+pin+"&amount="+inputamount;
+                xhr.open("GET",aadress,true);
+                xhr.send();
+            }
+            
+            function showHistory(){
+                let username = document.getElementById("username").value;
+                let pin = document.getElementById("pin").value;
+                
+                let aadress = "/showhistory?username="+username+"&pin="+pin
+                xhr.open("GET",aadress,true);
+                xhr.send();
+            }
+            
+            function kuvaVastus(){
+                if(xhr.readyState==4){
+                document.getElementById("vastus").innerHTML=xhr.responseText;
+                }
+            }
+            
+        </script>
+    </head>
+    <body>
+        <div>Alustamiseks sisesta kasutajanimi ja pin</div>
+        
+        
+        <input type="text" id="username"/> kasutajanimi<br>
+        <input type="text" id="pin"/> pin<br>
+        
+        <input type="button" id="adduser" value="loo konto" onclick="addUser()"/><br>
+        <input type="button" id="checkbalance" value="vaata jääki" onclick="checkBalance()"/><br>
+        <input type="text" id="amount"/> summa<br>
+        <input type="button" id="checkbalance" value="lisa raha" onclick="depositMoney()"/><br>
+        <input type="button" id="checkbalance" value="võta raha" onclick="withdrawMoney()"/><br>
+        <input type="button" id="checkbalance" value="vaata väljavõtet" onclick="showHistory()"/><br>
+        
+        <div id="vastus"></div>
+    </body>
+</html>
