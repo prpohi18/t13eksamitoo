@@ -38,12 +38,28 @@ public class Rakendus {
        }
 
     @RequestMapping("/arvutamine")
-       float jagamine(String tehe){
-       /*for (int i = 0; i < tehe.length(); i++) {
+       float arvutamine(String tehe){
+           /* int markCounter = 0;
+            Var arvutusRida = [];
+            Var operaator = [];
+            int numbridTehtes = [];
+            int nrCounter = 0;
+            int counter = 0;
+       for (int i = 0; i < tehe.length(); i++) {
             if (Character.isDigit(tehe.charAt(i))) {
             return 1;
             } else {
             return 2;
+            }
+            arvutusRida.splice(tehe.charAt(i));
+            if(Characer.isDigit(tehe.charAt(i)) == true){
+                String number = number + tehe.charAt(i);
+            } else if {
+                counter = counter + 1;
+                nrCounter = nrCounter + 1;
+                operaator[counter] = tehe.charAt(i);
+                int numberInt = String.parseInt(number);
+                numbridTehtes[nrCounter] = numberInt;
             }
        }*/
        return tehe;
