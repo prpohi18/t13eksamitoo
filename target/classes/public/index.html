@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<!--
+    https://korrutamine.herokuapp.com/
+-->
+<html>
+    <head>
+        <title>Arvutamine</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            let xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = kuvaVastus
+/*
+            function add() {
+                let a1=document.getElementById("kast1").value
+                let a2=document.getElementById("kast2").value
+                let aadress="/liitmine?arv1="+a1+"&arv2="+a2
+                xhr.open("GET", aadress, true)
+                xhr.send()
+            }
+
+            function subtract() {
+                let a1=document.getElementById("kast1").value
+                let a2=document.getElementById("kast2").value
+                let aadress="/lahutamine?arv1="+a1+"&arv2="+a2
+                xhr.open("GET", aadress, true)
+                xhr.send()
+            }
+
+            function multiply() {
+                let a1=document.getElementById("kast1").value
+                let a2=document.getElementById("kast2").value
+                let aadress="/korrutamine?arv1="+a1+"&arv2="+a2
+                xhr.open("GET", aadress, true)
+                xhr.send()
+                //document.getElementById("kast1").value + "*";
+            }
+            
+            function divide() {
+                let a1=document.getElementById("kast1").value
+                let a2=document.getElementById("kast2").value
+                let aadress="/jagamine?arv1="+a1+"&arv2="+a2
+                xhr.open("GET", aadress, true)
+                xhr.send()
+            }
+*/
+
+            function add() {
+                document.getElementById("kast1").value = document.getElementById("kast1").value + "+"
+            }
+
+            function subtract() {
+                document.getElementById("kast1").value = document.getElementById("kast1").value + "-"
+            }
+
+            function multiply() {
+                document.getElementById("kast1").value = document.getElementById("kast1").value + "*"
+            }
+            
+            function divide() {
+                document.getElementById("kast1").value = document.getElementById("kast1").value + "/"
+            }
+
+            function calculate() {
+                let a1=document.getElementById("kast1").value
+                let aadress="/arvutamine?tehe="+a1
+                xhr.open("GET", aadress, true)
+                xhr.send()
+            }
+
+            function add1() {
+                document.getElementById("kast1").value = document.getElementById("kast1").value + 1
+            }
+
+            function add2() {
+                document.getElementById("kast1").value = document.getElementById("kast1").value + "2"
+            }
+
+            function add3() {
+                document.getElementById("kast1").value = document.getElementById("kast1").value + "3"
+            }
+
+            function add4() {
+                document.getElementById("kast1").value = document.getElementById("kast1").value + "4"
+            }
+
+            function add5() {
+                document.getElementById("kast1").value = document.getElementById("kast1").value + "5"
+            }
+
+            function add6() {
+                document.getElementById("kast1").value = document.getElementById("kast1").value + "6"
+            }
+
+            function add7() {
+                document.getElementById("kast1").value = document.getElementById("kast1").value + "7"
+            }
+
+            function add8() {
+                document.getElementById("kast1").value = document.getElementById("kast1").value + "8"
+            }
+
+            function add9() {
+                document.getElementById("kast1").value = document.getElementById("kast1").value + "9"
+            }
+
+            function add0() {
+                document.getElementById("kast1").value = document.getElementById("kast1").value + "0"
+            }
+            
+            function kuvaVastus(){
+                if(xhr.readyState==4){
+                    document.getElementById("vastus").innerHTML=xhr.responseText
+                    document.getElementById("kast1").value=xhr.responseText
+                    document.getElementById("kast2").value=""
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Arvutamine</h1>
+        <p>SISESTA NUMBRID:</p>
+        <input type="text" id="kast1" />
+        <input type="text" id="kast2" />
+        <span> VASTUS:</span>
+        <span id="vastus">Vastuse koht</span>
+        <br />
+        <input type="button" onclick="add()" value="+" />
+        <input type="button" onclick="subtract()" value="-" />
+        <input type="button" onclick="multiply()" value="*" />
+        <input type="button" onclick="divide()" value="/" />
+        <br />
+        <input type="button" onclick="add1()" value="1" />
+        <input type="button" onclick="add2()" value="2" />
+        <input type="button" onclick="add3()" value="3" />
+        <br />
+        <input type="button" onclick="add4()" value="4" />
+        <input type="button" onclick="add5()" value="5" />
+        <input type="button" onclick="add6()" value="6" />
+        <br />
+        <input type="button" onclick="add7()" value="7" />
+        <input type="button" onclick="add8()" value="8" />
+        <input type="button" onclick="add9()" value="9" />
+        <br />
+        <input type="button" onclick="add0()" value="0" />
+        <input type="button" onclick="calculate()" value="=" />
+    </body>
+</html>
