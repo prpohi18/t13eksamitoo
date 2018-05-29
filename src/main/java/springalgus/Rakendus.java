@@ -54,12 +54,12 @@ public class Rakendus {
            } else if (operator == "-"){
                vastus = nr1 - nr2;
            }*/
-        String[] numbrid = tehe.split("*");
+        String[] numbrid = tehe.split("\\*");
         int number1 = Integer.parseInt(numbrid[0]);
         int number2 = Integer.parseInt(numbrid[1]);
         int vastus = 0;
         for (int i=0; i<tehe.length(); i++) {
-            if(tehe.charAt(i) == '*'){
+            if (tehe.charAt(i) == '*'){
                 vastus = number1 * number2;
             } else if(tehe.charAt(i) == '/'){
                 vastus = number1 / number2;
