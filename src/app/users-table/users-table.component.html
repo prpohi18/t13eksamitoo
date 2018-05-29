@@ -1,0 +1,48 @@
+<p-panel header="{{title}}">
+
+  <div class="search">
+    <p-panel header="Search">
+      <div class="ui-g">
+        <div class="ui-g-6">
+          <div class="ui-inputgroup">
+            <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
+            <input type="text" pInputText placeholder="ID" (input)="users_table.filter($event.target.value, 'id', 'contains')">
+          </div>
+        </div>
+
+        <div class="ui-g-6">
+          <div class="ui-inputgroup">
+            <span class="ui-inputgroup-addon">@</span>
+            <input type="text" pInputText placeholder="Nickname" (input)="users_table.filter($event.target.value, 'nickname', 'contains')">
+          </div>
+        </div>
+      </div>
+    </p-panel>
+  </div>
+
+  <p-table #users_table [value]="users" [paginator]="true" [rows]="10" [rowsPerPageOptions]="[5,10,20,50,100,1000]" sortField="id">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Id</th>
+        <th>Account</th>
+        <th>Nickname</th>
+        <th>Total Play Time</th>
+        <th [pSortableColumn]="'updated_dt'">Date <p-sortIcon [field]="'updated_dt'"></p-sortIcon></th>
+        <th></th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-users>
+      <tr>
+        <td>{{users.id}}</td>
+        <td>{{users.account_id}}</td>
+        <td>{{users.nickname}}</td>
+        <td>{{users.total_play_time}}</td>
+        <td>{{users.updated_dt}}</td>
+        <td class="button">
+          <button pButton routerLink="/user-detail/{{users.id}}" label="View details"></button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+
+</p-panel>

@@ -1,0 +1,15 @@
+.search {
+  margin: 12px auto 40px;
+
+  input {
+    width: 90%;
+  }
+}
+
+td {
+  word-wrap: break-word;
+  
+  &.button {
+    text-align: center;
+  }
+}

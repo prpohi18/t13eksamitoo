@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+#container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 24px;
+}
