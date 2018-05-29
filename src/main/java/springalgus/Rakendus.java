@@ -40,15 +40,4 @@ public class Rakendus {
 		//System.getProperties().put("server.port", 40305);
         SpringApplication.run(Rakendus.class, args);
     }
-    private static final String PATH = "/error";
-
-    @RequestMapping(value = PATH)
-    public String error() {
-        return "Error handling";
-    }
-
-    @Override
-    public String getErrorPath() {
-        return PATH;
-    }
 }
