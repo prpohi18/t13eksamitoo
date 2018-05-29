@@ -55,6 +55,7 @@ public class Rakendus {
                vastus = nr1 - nr2;
            }*/
         String[] numbrid = tehe.split("\\*");
+        String[] numbrid = tehe.split("\\/");
         int number1 = Integer.parseInt(numbrid[0]);
         int number2 = Integer.parseInt(numbrid[1]);
         int vastus = 0;
