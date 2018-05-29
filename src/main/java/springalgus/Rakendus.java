@@ -46,8 +46,6 @@ public class Rakendus {
             
         }
     }
-           return arv1/arv2;
-       }
     public static void main(String[] args) {
 		//System.getProperties().put("server.port", 40305);
         SpringApplication.run(Rakendus.class, args);
