@@ -1,6 +1,7 @@
 import java.awt.EventQueue;
 import javax.swing.JFrame;
 
+
 public class Snake extends JFrame {
 
     private Snake() {

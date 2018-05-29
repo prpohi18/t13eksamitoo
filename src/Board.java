@@ -4,6 +4,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.io.*;
+import java.util.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
 
 
 
@@ -17,7 +24,7 @@ public class Board extends JPanel implements ActionListener {
     private int arr_x[] = new int[total];
     private int arr_y[] = new int[total];
 
-    private int points;
+    public int points;
     private int food_x;
     private int food_y;
 
@@ -31,6 +38,12 @@ public class Board extends JPanel implements ActionListener {
     private Image body;
     private Image food;
     private Image head;
+    long startTime = System.currentTimeMillis();
+
+
+    private DateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+    private DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+
 
     public Board() {
 
@@ -70,6 +83,26 @@ public class Board extends JPanel implements ActionListener {
         int delay = 80;
         timer = new Timer(delay, this);
         timer.start();
+
+        try {
+            FileWriter fileWriter = new FileWriter("./tulemused.txt", true);
+            PrintWriter printWriter = new PrintWriter(fileWriter);
+
+            DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+            Date date = new Date();
+            String startTime = dateFormat.format(date);
+
+            printWriter.println("\nMäng alustatud: " + startTime);
+
+
+            printWriter.flush();
+            printWriter.close();
+
+
+        } catch (IOException e) {
+            // do something, when the file is not readable
+            System.out.println("The file could not be read.");
+        }
     }
 
     @Override
@@ -121,6 +154,32 @@ public class Board extends JPanel implements ActionListener {
         g.setColor(Color.red);
         g.setFont(end);
         g.drawString(gameOver, (win_W - wordSize.stringWidth(gameOver)) / 2, win_H / 2);
+
+        System.out.println();
+
+        try {
+            //PrintWriter pw = new PrintWriter(new FileWriter("./dataOut.txt"));
+            FileWriter fileWriter = new FileWriter("./tulemused.txt", true);
+            PrintWriter printWriter = new PrintWriter(fileWriter);
+
+            int cpoints = points-3;
+
+
+            DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+            Date date = new Date();
+            String endTime = dateFormat.format(date);
+
+            printWriter.println("punkte kogutud: " + cpoints + "\nMäng lõpetatud: " + endTime);
+
+
+            printWriter.flush();
+            printWriter.close();
+
+
+        } catch (IOException e) {
+            // do something, when the file is not readable
+            System.out.println("The file could not be read.");
+        }
 
     }
 
@@ -194,6 +253,26 @@ public class Board extends JPanel implements ActionListener {
 
         r = (int) (Math.random() * 30);
         food_y = ((r * pixel));
+
+        if ((System.currentTimeMillis()-startTime/1000)>1){
+            try {
+                FileWriter fileWriter = new FileWriter("./tulemused.txt", true);
+                PrintWriter printWriter = new PrintWriter(fileWriter);
+
+                String eatTime = Long.toString((System.currentTimeMillis()-startTime)/1000);
+
+                printWriter.println("söögi korjamise aeg: " + eatTime);
+
+
+                printWriter.flush();
+                printWriter.close();
+
+
+            } catch (IOException e) {
+                // do something, when the file is not readable
+                System.out.println("The file could not be read.");
+            }
+        }
     }
 
     @Override
