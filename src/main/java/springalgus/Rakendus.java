@@ -4,6 +4,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.RequestMapping; 
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.script.ScriptEngineManager;
+import javax.script.ScriptEngine;
+import javax.script.ScriptException;
+
 @RestController
 @SpringBootApplication
 public class Rakendus {
@@ -38,8 +43,8 @@ public class Rakendus {
        }
 
     @RequestMapping("/arvutamine")
-       float arvutamine(float nr1, String operator, float nr2){
-           float vastus = 0;
+       int arvutamine(String tehe){
+           /*float vastus = 0;
            if(operator == "*"){
                vastus = nr1 * nr2;
            } else if (operator == "/"){
@@ -48,8 +53,23 @@ public class Rakendus {
                vastus = nr1 + nr2;
            } else if (operator == "-"){
                vastus = nr1 - nr2;
-           }
-           return vastus;
+           }*/
+        String[] numbrid = tehe.split("*");
+        int number1 = Integer.parseInt(numbrid[0]);
+        int number2 = Integer.parseInt(numbrid[1]);
+        int vastus = 0;
+        for (int i=0; i<tehe.length(); i++) {
+            if(tehe.charAt(i) == '*'){
+                vastus = number1 * number2;
+            } else if(tehe.charAt(i) == '/'){
+                vastus = number1 / number2;
+            } else if(tehe.charAt(i) == '+'){
+                vastus = number1 + number2;
+            } else if(tehe.charAt(i) == '-'){
+                vastus = number1 - number2;
+            }
+        } 
+        return vastus;
             
     }
     public static void main(String[] args) {
