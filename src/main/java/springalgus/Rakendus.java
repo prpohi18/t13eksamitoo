@@ -40,11 +40,13 @@ public class Rakendus {
     @RequestMapping("/arvutamine")
        float jagamine(String tehe){
        for (int i = 0; i < tehe.length(); i++) {
-        if (Character.isDigit(tehe.charAt(i)) = false ) {
-            
-        } else {
-            
-        }
+            if (Character.isDigit(tehe.charAt(i))) {
+            return 1;
+            } else {
+            return 2;
+            }
+       }
+       return 0;
     }
     public static void main(String[] args) {
 		//System.getProperties().put("server.port", 40305);
