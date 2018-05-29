@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Modifying records/</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            getRecords();
+        });
+
+        // Uue kirje lisamine
+        let xhr = new XMLHttpRequest();
+        function addRecord() {
+            let type=document.getElementById("typeBox").value
+            let slotContent=document.getElementById("slotContentBox").value
+            let slotDesc=document.getElementById("slotDescBox").value
+            let slotSentence=document.getElementById("slotSentenceBox").value
+
+            let aadress="/records/add?type="+type+"&slotContent="+slotContent+"&slotDesc="+slotDesc+"&slotSentence="+slotSentence
+            xhr.open("GET", aadress, true)
+            xhr.send()
+            location.reload();
+        }
+    </script>
+</head>
+<body>
+<div class = "container">
+    <h1>Kirjete modifitseerimine</h1>
+    <div>Required fields</div>
+    <input type="type" id="typeBox" placeholder="Type" />
+    <input type="slotContent" id="slotContentBox" placeholder="Content" />
+    <input type="slotDesc" id="slotDescBox" placeholder="Description" />
+    <input type="slotSentence" id="slotSentenceBox" placeholder="Sentence" />
+
+    <input type="submit" value="Add record" onclick="addRecord()"></div>
+
+
+
+</body>
+</html>
