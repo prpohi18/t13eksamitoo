@@ -11,13 +11,29 @@
             let xhr = new XMLHttpRequest();
             xhr.onreadystatechange = kuvaVastus
 
+            function add() {
+                let a1=document.getElementById("kast1").value
+                let a2=document.getElementById("kast2").value
+                let aadress="/liitmine?arv1="+a1+"&arv2="+a2
+                xhr.open("GET", aadress, true)
+                xhr.send()
+            }
+
+            function subtract() {
+                let a1=document.getElementById("kast1").value
+                let a2=document.getElementById("kast2").value
+                let aadress="/lahutamine?arv1="+a1+"&arv2="+a2
+                xhr.open("GET", aadress, true)
+                xhr.send()
+            }
+
             function multiply() {
-                /*let a1=document.getElementById("kast1").value
+                let a1=document.getElementById("kast1").value
                 let a2=document.getElementById("kast2").value
                 let aadress="/korrutamine?arv1="+a1+"&arv2="+a2
                 xhr.open("GET", aadress, true)
-                xhr.send()*/
-                document.getElementById("kast1").value + "*";
+                xhr.send()
+                //document.getElementById("kast1").value + "*";
             }
             
             function divide() {
@@ -31,6 +47,8 @@
             function kuvaVastus(){
                 if(xhr.readyState==4){
                     document.getElementById("vastus").innerHTML=xhr.responseText
+                    document.getElementById("kast1").value=xhr.responseText
+                    document.getElementById("kast2").value=""
                 }
             }
         </script>
@@ -39,9 +57,12 @@
         <h1>Arvutamine</h1>
         <p>SISESTA NUMBRID:</p>
         <input type="text" id="kast1" />
-        <input type="text" id="kast2" /> 
+        <input type="text" id="kast2" /><br>
+        <input type="button" onclick="add()" value="+" />
+        <input type="button" onclick="subtract()" value="-" />
         <input type="button" onclick="multiply()" value="*" />
         <input type="button" onclick="divide()" value="/" />
+        <br>
         <span> VASTUS:</span>
         <span id="vastus">Vastuse koht</span>
     </body>
