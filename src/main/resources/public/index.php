@@ -10,7 +10,7 @@
         <script>
             let xhr = new XMLHttpRequest();
             xhr.onreadystatechange = kuvaVastus
-
+/*
             function add() {
                 let a1=document.getElementById("kast1").value
                 let a2=document.getElementById("kast2").value
@@ -43,45 +43,53 @@
                 xhr.open("GET", aadress, true)
                 xhr.send()
             }
+*/
+
+            function calculate() {
+                let a1=document.getElementById("kast1").value
+                let aadress="/avrutamine?tehe="+a1
+                xhr.open("GET", aadress, true)
+                xhr.send()
+            }
 
             function add1() {
-                document.getElementById("kast2").value + "1"
+                document.getElementById("kast1").value + "1"
             }
 
             function add2() {
-                document.getElementById("kast2").value + "2"
+                document.getElementById("kast1").value + "2"
             }
 
             function add3() {
-                document.getElementById("kast2").value + "3"
+                document.getElementById("kast1").value + "3"
             }
 
             function add4() {
-                document.getElementById("kast2").value + "4"
+                document.getElementById("kast1").value + "4"
             }
 
             function add5() {
-                document.getElementById("kast2").value + "5"
+                document.getElementById("kast1").value + "5"
             }
 
             function add6() {
-                document.getElementById("kast2").value + "6"
+                document.getElementById("kast1").value + "6"
             }
 
             function add7() {
-                document.getElementById("kast2").value + "7"
+                document.getElementById("kast1").value + "7"
             }
 
             function add8() {
-                document.getElementById("kast2").value + "8"
+                document.getElementById("kast1").value + "8"
             }
 
             function add9() {
-                document.getElementById("kast2").value + "9"
+                document.getElementById("kast1").value + "9"
             }
 
             function add0() {
-                document.getElementById("kast2").value + "0"
+                document.getElementById("kast1").value + "0"
             }
             
             function kuvaVastus(){
@@ -109,12 +117,16 @@
         <input type="button" onclick="add1()" value="1" />
         <input type="button" onclick="add2()" value="2" />
         <input type="button" onclick="add3()" value="3" />
+        <br />
         <input type="button" onclick="add4()" value="4" />
         <input type="button" onclick="add5()" value="5" />
         <input type="button" onclick="add6()" value="6" />
+        <br />
         <input type="button" onclick="add7()" value="7" />
         <input type="button" onclick="add8()" value="8" />
         <input type="button" onclick="add9()" value="9" />
+        <br />
         <input type="button" onclick="add0()" value="0" />
+        <input type="button" onclick="calculate()" value="=" />
     </body>
 </html>
