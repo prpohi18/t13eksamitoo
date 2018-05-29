@@ -36,6 +36,18 @@ public class Rakendus {
        float jagamine(float arv1, float arv2){
            return arv1/arv2;
        }
+
+    @RequestMapping("/arvutamine")
+       float jagamine(String tehe){
+       for (int i = 0; i < tehe.length(); i++) {
+        if (Character.isDigit(tehe.charAt(i)) = false ) {
+            
+        } else {
+            
+        }
+    }
+           return arv1/arv2;
+       }
     public static void main(String[] args) {
 		//System.getProperties().put("server.port", 40305);
         SpringApplication.run(Rakendus.class, args);
