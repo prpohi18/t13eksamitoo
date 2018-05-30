@@ -1,0 +1,242 @@
+/*@font-face {
+    font-family: "My Custom Font";
+    src: url("graafika/tw-cen-mt-condensed-extra-bold/TCCEB.TTF") format("truetype");
+}*/
+
+body {
+    background: url("Graafika/oigebackground.jpg");
+    background-size:contain;
+    background-position:center;
+    font-family: 'Oswald', sans-serif;
+
+}
+
+
+
+.webpage {
+
+    max-width: 90%;
+}
+
+@media {
+
+}
+
+.text-white {
+    color: #ffffff;
+}
+
+.text-red {
+    color: #900c0c;
+}
+
+.bg-red {
+    background-color: rgba(86,8,8, 0.9);
+}
+
+.bg-faded-white {
+    background-color: rgba(255,255,255, 0.6);
+}
+/*NAVIGATSIOON*//*NAVIGATSIOON*//*NAVIGATSIOON*//*NAVIGATSIOON*//*NAVIGATSIOON*//*NAVIGATSIOON*/
+
+/**/
+/**/
+.navigation {
+
+}
+.navbar {
+    padding: 0;
+    width: 100%;
+
+}
+
+.nav-upper{
+    width: 100%;
+    background-color: #7e1717;
+    height: 5em;
+    display: flex;
+    align-items: center;
+}
+
+.nav-telli {
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+}
+
+.nav-telli a {
+    font-size: 1.7em;
+    padding-left: 1.3em;
+}
+
+.nav-ostukorv{
+    height: 3.3em;
+    position: absolute;
+    right: 1.5em;
+
+}
+
+.nav-bottom {
+    width: 100%;
+    height: 2em;
+}
+
+.nav-logins{
+    float: right;
+    display: flex;
+    padding-right: 2em;
+    height: 100%;
+    align-items: center;
+}
+
+.nav-logins-registreeri{
+
+    padding-right: 1em;
+    color: #900c0c;
+    text-decoration: none;
+}
+
+.nav-logins-logisisse{
+    padding-right: 1em;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.nav-logo {
+    position: absolute;
+    left: 50%;
+    margin-left: -125px;
+    top: 20px;
+}
+
+.nav-logo img {
+    max-width: 250px;
+}
+
+/*MAIN PAGE*//*MAIN PAGE*//*MAIN PAGE*//*MAIN PAGE*//*MAIN PAGE*/
+/**/
+/**/
+.main-section {
+    margin-top: 2em;
+}
+
+.valmistamine {
+
+    height: 100%;
+}
+
+.tee-pitsa {
+
+    margin-top: 3em;
+    height: 3em;
+    border-radius: 10px;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+
+
+}
+
+.viimati-valmistatud {
+
+
+    margin-top: 1.5em;
+    color: #7e1717;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1.5em;
+    height: 15em;
+    padding: 1em;
+
+}
+
+.pitsakarp {
+
+}
+
+.populaarne {
+
+    padding: 0.5em 2em;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    font-size: 2em;
+    border-radius: 20px;
+
+}
+
+.card {
+
+    align-items: center;
+
+}
+
+.card-title {
+    text-align: center;
+    margin-top: 1em;
+}
+
+.card-img-bottom {
+    padding: 2em 2em 0em 2em;
+}
+
+.lisakorvi {
+    text-align: center;
+    background-color: #900c0c;
+    color: #FFFFFF;
+    width: 50%;
+    border-radius: 10px;
+    padding: 0.2em;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    opacity: 0.9;
+
+}
+
+/*LOGIN*//*LOGIN*//*LOGIN*//*LOGIN*//*LOGIN*//*LOGIN*//*LOGIN*//*LOGIN*//*LOGIN*/
+/**/
+/**/
+
+.login-section {
+    margin-top: 4em;
+}
+
+.registreeri-form {
+
+    -ms-overflow-y: hidden;
+    overflow-y: hidden;
+}
+
+.logisisse-form {
+    overflow-scrolling: auto;
+}
+
+.btn-red {
+    background-color: #900c0c;
+    height: 45px;
+    border-color: #7e1717;
+}
+
+.btn-red:hover {
+    background-color: #000000;
+}
+
+.full {
+    width: 100%;
+}
+
+#loginButton {
+    margin-top: 15px;
+}
+
+.loginHeading {
+    display: flex;
+    font-size: 20px;
+    padding-top: 10px;
+}
+
+.padup {
+    padding-top: 15px;
+}
