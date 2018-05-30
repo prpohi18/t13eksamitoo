@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+ <head>
+  <title>Korrutamine</title>
+  <script>
+ let xhr=new XMLHttpRequest();
+ xhr.onreadystatechange=kuvaVastus;
+ function arvutamine(){
+	let p2ring="arv1="+document.getElementById("kast1").value+
+		"&arv2="+document.getElementById("kast2").value;
+	xhr.open("GET", "korrutus?"+p2ring, true);
+	xhr.send(true);
+ }
+ function kuvaVastus(){
+	if(xhr.readyState==4){
+		document.getElementById("vastus").innerHTML=xhr.responseText;
+	}
+ 
+ }
+  </script>
+ 
+ </head>
+ <body>
+  <img src="download.png" /><br />
+  <input type = "number" value = "5" id= "kast1" /> X
+  <input type = "number" value = "6" id= "kast2" />
+  <input type = "button" value = "Arvuta" onclick="arvutamine()" />
+  <div id ="vastus">vastuse koht</div>
+ </body>
+<html>

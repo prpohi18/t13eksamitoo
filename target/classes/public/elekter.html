@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+ <head>
+ <meta charset="UTF-8">
+  <title>Elektrihind</title>
+  <script>
+ let xhr=new XMLHttpRequest();
+ xhr.onreadystatechange=kuvaVastus;
+ function elektriHind(){
+	let paring="kwh="+document.getElementById("box1").value+
+		"&hind_kwh= 0.04 &tundide_arv="+document.getElementById("box2").value+"&tarbija="+document.getElementById("box3").value;
+	xhr.open("GET", "elektrihind?"+paring, true);
+	xhr.send(true);
+ }
+ function kuvaVastus(){
+	if(xhr.readyState==4){
+		document.getElementById("vastus").innerHTML=xhr.responseText;
+	}
+ 
+ }
+ //function myKeyPress(){
+	/*var data = "Salvestatud kellaajal:" + new Date() + "ja vajutati nuppu: "
+	var a = window.document.createElement('a');
+	a.href = window.URL.createObjectURL(new Blob([data], {type: 'text/csv'}));
+	a.download = 'test.csv';
+	*/
+	function myKeyPress(e){
+    var keynum;
+
+    if(window.event) { // IE                    
+      keynum = e.keyCode;
+    } else if(e.which){ // Netscape/Firefox/Opera                   
+      keynum = e.which;
+    }
+	var log = "Salvestatud kellaajal:" + new Date() + "ja vajutati nuppu:"+String.fromCharCode(keynum);
+	console.log(log);
+	
+	}
+	function test(){
+		console.log(log);
+	}
+	/*var encodedUri = encodeURI(log);
+	var link = document.createElement("a");
+	link.setAttribute("href", encodedUri);
+	link.setAttribute("download", "my_data.csv");
+	link.innerHTML= "Lae logi alla";
+	link.click(); // This will download the data file named "my_data.csv".
+	*/
+	
+  </script>
+ 
+ </head>
+ <body>
+  <h1>Elektri arvutamine<h1>
+		<h2>Sisestage tarbija tunnine kw/h väärtus<h2>
+		<input type="number" id="box1" onkeypress="myKeyPress(event)"/>
+		<h2>Sisestage tarbija ööpäevane sisselülitatud tundide arv<h2>
+		<input id="box2" type="number" onkeypress = "myKeyPress(event)"/>
+		<h2>Sisestage tarbija<h2>
+        <input type="text" id="box3" onkeypress = "myKeyPress(event)"/>
+		<input id="elekterbtn" type="button" value="Arvuta elektrihind" onclick="elektriHind()"/><br>        
+        <div id="vastus"></div>
+ </body>
+<html>
