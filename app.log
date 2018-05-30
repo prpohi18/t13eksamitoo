@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2018-05-30T17:40:04</date>
+  <millis>1527691204845</millis>
+  <sequence>0</sequence>
+  <logger>krislyn.logger.WriteLogToFile</logger>
+  <level>INFO</level>
+  <class>krislyn.logger.WriteLogToFile</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Information message</message>
+</record>
+<record>
+  <date>2018-05-30T17:40:04</date>
+  <millis>1527691204927</millis>
+  <sequence>1</sequence>
+  <logger>krislyn.logger.WriteLogToFile</logger>
+  <level>WARNING</level>
+  <class>krislyn.logger.WriteLogToFile</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Warning message</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2018-05-30T17:40:42</date>
+  <millis>1527691242790</millis>
+  <sequence>0</sequence>
+  <logger>krislyn.logger.WriteLogToFile</logger>
+  <level>INFO</level>
+  <class>krislyn.logger.WriteLogToFile</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Program start</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2018-05-30T17:41:49</date>
+  <millis>1527691309732</millis>
+  <sequence>0</sequence>
+  <logger>krislyn.logger.WriteLogToFile</logger>
+  <level>INFO</level>
+  <class>krislyn.logger.WriteLogToFile</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Program start</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2018-05-30T17:48:02</date>
+  <millis>1527691682389</millis>
+  <sequence>0</sequence>
+  <logger>krislyn.logger.WriteLogToFile</logger>
+  <level>INFO</level>
+  <class>krislyn.logger.WriteLogToFile</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Program start</message>
+</record>
+<record>
+  <date>2018-05-30T17:48:02</date>
+  <millis>1527691682455</millis>
+  <sequence>1</sequence>
+  <logger>krislyn.logger.WriteLogToFile</logger>
+  <level>INFO</level>
+  <class>krislyn.logger.WriteLogToFile</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Inserted something</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2018-05-30T17:49:15</date>
+  <millis>1527691755409</millis>
+  <sequence>0</sequence>
+  <logger>krislyn.logger.WriteLogToFile</logger>
+  <level>INFO</level>
+  <class>krislyn.logger.WriteLogToFile</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Program start</message>
+</record>
+<record>
+  <date>2018-05-30T17:49:15</date>
+  <millis>1527691755466</millis>
+  <sequence>1</sequence>
+  <logger>krislyn.logger.WriteLogToFile</logger>
+  <level>INFO</level>
+  <class>krislyn.logger.WriteLogToFile</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Inserted something</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2018-05-30T17:50:23</date>
+  <millis>1527691823283</millis>
+  <sequence>0</sequence>
+  <logger>krislyn.logger.WriteLogToFile</logger>
+  <level>INFO</level>
+  <class>krislyn.logger.WriteLogToFile</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Program start</message>
+</record>
+<record>
+  <date>2018-05-30T17:50:23</date>
+  <millis>1527691823365</millis>
+  <sequence>1</sequence>
+  <logger>krislyn.logger.WriteLogToFile</logger>
+  <level>INFO</level>
+  <class>krislyn.logger.WriteLogToFile</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Inserted something</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2018-05-30T17:51:39</date>
+  <millis>1527691899864</millis>
+  <sequence>0</sequence>
+  <logger>krislyn.logger.WriteLogToFile</logger>
+  <level>INFO</level>
+  <class>krislyn.logger.WriteLogToFile</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Program start</message>
+</record>
+<record>
+  <date>2018-05-30T17:51:39</date>
+  <millis>1527691899949</millis>
+  <sequence>1</sequence>
+  <logger>krislyn.logger.WriteLogToFile</logger>
+  <level>INFO</level>
+  <class>krislyn.logger.WriteLogToFile</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Inserted something</message>
+</record>
+<record>
+  <date>2018-05-30T17:51:39</date>
+  <millis>1527691899951</millis>
+  <sequence>2</sequence>
+  <logger>krislyn.logger.WriteLogToFile</logger>
+  <level>INFO</level>
+  <class>krislyn.logger.WriteLogToFile</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Clicked button</message>
+</record>
+</log>
