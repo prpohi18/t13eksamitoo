@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vaheleht</title>
+  <script src="clock.js"></script> 
+  <link rel="stylesheet" type="text/css" href="clock.css">
+
+</head>
+<body>
+
+  <button id="next" >Järgmine pilt</button>
+  
+  <select id="color"  class="input">
+    <option value="default">Vali teksti värv</option>
+    <option value="navy">sinine</option>
+	  <option value="black">must</option>
+    <option value="white">valge</option>
+	  <option value="green">roheline</option>
+    <option value="red">punane</option>
+	  <option value="plum">lilla</option>
+	  <option value="skyblue">taevasinine</option>
+	  <option value="seashell">beež</option>  
+  </select>
+  
+  <button id="bigger" >Tekst suuremaks</button>
+  <button id="smaller" >Tekst väiksemaks</button>
+<br><br>
+  <div>
+    <label for="choose" class="btn">Vali taustaks oma pilt</label>
+    <input id="choose" type="file" style="visibility:hidden;" />
+  </div>
+  
+
+  <div id="clock"></div>
+  
+  <div class = "randomBm">
+    <p id="text">IGAV? Pakun sulle linki, mille kunagi oled salvestanud, vahest viskad pilgu peale? </p>
+    <a id="bookmark" class= "random" target="_blank"></a>
+    <p id="nextLink" >Näita linki</p>
+  </div>
+ 
+</body>
+</html>

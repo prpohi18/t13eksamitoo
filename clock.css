@@ -1,0 +1,71 @@
+body{
+    width:auto;
+    height:auto;
+    background-size:cover;
+	background-repeat: no-repeat;
+	background-position: center; 
+	background-attachment: fixed;
+  }
+
+button, select, input, .btn, label{
+    color: black;
+    background-color: rgba(219, 251, 253, 0.795);
+    width: auto;
+    text-align: left;
+	border-radius: 12px;
+	padding: 5px 10px;
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+
+button:hover, select:hover, input:hover, .btn:hover, label:hover{
+    cursor: pointer;
+    background-color: rgb(219, 251, 253);
+}
+  
+#text{
+    font-size:25px;
+    font-family: 'Nanum Myeongjo', serif;
+}
+#nextLink{
+    font-size:15px;
+    font-family: 'Nanum Myeongjo', serif;
+    text-align: right;
+    padding-right: 20pt;
+}
+#nextLink:hover{
+    cursor: pointer;
+    text-shadow: 2px 2px 2px rgb(207, 204, 247);
+}
+
+.randomBm{
+    color: rgb(255, 255, 255);
+    position: fixed;
+    left: 0;
+    bottom: 20px;
+    background-color: rgba(228, 243, 255, 0.527);
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+}
+.random{
+    font-size:25px;
+    text-decoration: underline;
+    cursor: auto;
+    font-family: 'Nanum Myeongjo', serif;
+    text-align: right;
+    color: white;
+}
+.random:hover{
+    text-shadow: 4px 4px 4px rgb(180, 178, 216);
+    cursor: pointer;
+}
+
+#clock {
+    color:white;
+	position: auto;
+	padding: 10px;
+    text-align: center;
+    font-size: 9vw;
+    text-shadow: 3px 3px 3px rgb(146, 142, 133);
+    font-family: 'Nanum Myeongjo', serif;
+}
