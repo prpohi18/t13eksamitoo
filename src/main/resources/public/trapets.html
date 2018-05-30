@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Trapets</title>
+        <script>	
+		let xhr=new XMLHttpRequest();
+		xhr.onreadystatechange=kuvaVastus2;
+		function trapetsiPindala(){
+		let p2ring2 = "alus1="+document.getElementById("kast3").value + "&alus2="+document.getElementById("kast4").value + "&kõrgus="+document.getElementById("kast5").value;
+			 xhr.open("GET", "trapetsipindala?"+p2ring2, true);
+			 xhr.send(true);
+        }
+		function kuvaVastus2(){
+			if(xhr.readyState==4){
+				document.getElementById("vastus").innerHTML=xhr.responseText
+			}
+		}
+		
+        </script>  
+		
+    </head>
+    <body>
+        <h1>Trapetsi pindala<h1>
+		<h2>Alus1(cm)<h2>
+		<input type="number" id="kast3"/>
+		<h2>Alus2(cm)<h2>
+		<input id="kast4" type="number"/>
+		<h2>Kõrgus(cm)<h2>
+        <input type="number" id="kast5"/>
+		<input id="pindalabtn" type="button" value="Arvuta Pindala" onclick="trapetsiPindala()"/><br>        
+        <div id="vastus"> vastuse koht</div>
+		
+		
+        
+        
+   
+
+    </body>
+</html> 
