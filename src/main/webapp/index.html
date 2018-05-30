@@ -22,6 +22,51 @@
             xhr.send()
             location.reload();
         }
+
+        // Kirje kustutamine. Kustutamine toimub record Id alusel
+        function deleteRecord(recordId) {
+            let aadress="/records/delete?id="+recordId
+            xhr.open("GET", aadress, true)
+            xhr.send()
+            location.reload();
+        }
+
+        //kutsub välja kasutajad
+        function getRecords() {
+            ajaxGet();
+
+            // DO GET
+            function ajaxGet() {
+                $.ajax({
+                    type: "GET",
+                    url: "records/all",
+                    success: function (result) {
+                        $.each(result, function (i, record) {
+                            // teen muutuja rcordRow
+                            var recordRow = '<tr>' +
+                                '<td>' + record.id + '</td>' +
+                                '<td>' + record.type + '</td>' +
+                                '<td>' + record.slotContent + '</td>' +
+                                '<td>' + record.slotDesc + '</td>' +
+                                '<td>' + record.slotSentence + '</td>' +
+                                '<td><button class="btn btn-sm btn-danger" onclick="deleteRecord(' + record.id + ');">Remove</button></td>' +
+                                '</tr>';
+
+                            $('#recordTable tbody').append(recordRow);
+
+                        });
+
+                        $("#recordTable tbody tr:odd").addClass("info");
+                        $("#recordTable tbody tr:even").addClass("success");
+                    },
+                    error: function (e) {
+                        alert("ERROR: ", e);
+                        console.log("ERROR: ", e);
+                    }
+                });
+            }
+        }
+
     </script>
 </head>
 <body>
@@ -35,7 +80,22 @@
 
     <input type="submit" value="Add record" onclick="addRecord()"></div>
 
-
+<!-- Teen tabeli lehel kuvamiseks -->
+<div class="row col-md-7 table-responsive">
+    <table id = "recordTable" class = "table table-bordered table-hover">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>TYPE</th>
+            <th>CONTENT</th>
+            <th>DESCRIPTION</th>
+            <th>SENTENCE</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
 
 </body>
 </html>
