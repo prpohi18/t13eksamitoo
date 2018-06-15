@@ -1,0 +1,7 @@
+body {
+    font-family: 'Old Standard TT', serif;
+    margin-top:100px;
+}
+.navbar-inverse{
+    opacity:0.9;
+}
