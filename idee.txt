@@ -1,0 +1,31 @@
+Jalgpallurite andmebaas
+
+Lisad mängija nime, hetke tiimi ning hetke numbri 
+Saab lisada ülemineku soovi, mängija liituks x-tiimiga ja saaks endale y-numbri 
+
+Saab kustutada ülemineku soovi 
+Saab kustutada lisatud mängija 
+
+Saab vaadata kõiki mängijaid keda on lisatud 
+Saab vaadata kõiki ülemineku soove 
+
+
+CREATE TABLE exam_players(
+	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	playername VARCHAR(50),
+	currentteam VARCHAR(50),
+	currentnumber INT NOT NULL
+);
+
+CREATE TABLE exam_transfers(
+	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	playername VARCHAR(50),
+	futureteam VARCHAR(50),
+	futurenumber INT NOT NULL
+);
+
+INSERT INTO exam_players VALUES (DEFAULT, "Cristiano Ronaldo", "Real Madrid", 7);
+INSERT INTO exam_players VALUES (DEFAULT, "Pierre-Emerick Aubameyang", "Arsenal", 14);
+
+INSERT INTO exam_transfers VALUES (DEFAULT, "Bernd Leno", "Arsenal", 32);
+INSERT INTO exam_transfers VALUES (DEFAULT, "Neymar", "Real Madrid", 11);
