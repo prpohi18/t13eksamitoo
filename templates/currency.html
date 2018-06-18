@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Currency</title>
+    <style>
+        .center-container {
+            margin: auto;
+            width: 60%;
+            border: 3px solid #2b32ad;
+            padding: 10px;
+
+        }
+        .center-body{
+            margin-left: 31%;
+            margin-right: 31%;
+        }
+    </style>
+</head>
+<body>
+    <div class="center-container">
+        <h1 style="text-align:center">Kalkulatoorium - {{ name }}</h1>
+        <hr>
+        <div class="center-body">
+            <label for="eur">Eur:</label>
+            <input type="number" class="form-control" id="eur">
+            <button class="btn btn-success" onclick="convert()">Arvuta</button>
+            <br>
+            <label for="kroon">Kroon:</label>
+            <p style="display: inline" id="kroon"></p>
+        </div>
+    </div>
+<script>
+    function convert(){
+        var eur = document.getElementById("eur").value;
+        var kroon = Math.round(eur * 15.6466 *100) / 100;
+        document.getElementById("kroon").innerText = kroon.toString();
+    }
+</script>
+</body>
+</html>
